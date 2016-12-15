@@ -1,0 +1,25 @@
+{
+  "name": "@agilatech/rain",
+  "version": "0.8.0",
+  "description": "Driver for Tipping Bucket Rain Gauge",
+  "main": "rain-gauge.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agilatech/rain.git"
+  },
+  "keywords": [
+    "sensor",
+    "rain",
+    "beaglebone",
+    "raspberry pi"
+  ],
+  "author": "Agilatech <scott@agilatech.com> (http://agilatech.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Agilatech/rain/issues"
+  },
+  "homepage": "https://github.com/Agilatech/rain#readme",
+  "dependencies": {
+    "onoff": "*"
+  }
+}
