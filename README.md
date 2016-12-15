@@ -10,7 +10,6 @@ npm install @agilatech/rain
 OR
 ```
 git clone https://github.com/Agilatech/rain.git
-node-gyp configure build
 ```
 
 ###Usage
