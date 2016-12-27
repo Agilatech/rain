@@ -1,6 +1,6 @@
 {
   "name": "@agilatech/rain",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Driver for Tipping Bucket Rain Gauge",
   "main": "rain.js",
   "repository": {
