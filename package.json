@@ -2,7 +2,7 @@
   "name": "@agilatech/rain",
   "version": "0.8.0",
   "description": "Driver for Tipping Bucket Rain Gauge",
-  "main": "rain-gauge.js",
+  "main": "rain.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Agilatech/rain.git"

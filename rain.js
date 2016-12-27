@@ -3,7 +3,7 @@ const Gpio = require('onoff').Gpio;
 module.exports = class Rain {
 
     constructor(gpio, tipAmount) {
-    	this.name = "Rain";
+    	this.name = "RAIN";
 		this.type = "sensor";
 
 		this.valueNames  = ["amount"];
@@ -26,8 +26,9 @@ module.exports = class Rain {
 
         this.bucket.watch((this._bucketTipFunction).bind(this));
 
-        process.on('SIGINT', (this._destructor).bind(this));
-        process.on('exit', (this._destructor).bind(this));
+        // should we be capturing sigints and exits in order to unexport the pins?
+        // process.on('SIGINT', (this._destructor).bind(this));
+        // process.on('exit', (this._destructor).bind(this));
 
         this.active = true;
         this.constructed = true;
@@ -36,6 +37,9 @@ module.exports = class Rain {
     _bucketTipFunction(err, val) {
     	if (err) {
     		console.error("Rain Gauge tip interrupt error: " + err);
+    		if (this.callbacks[0] !== 'undefined') {
+    			this.callbacks[0](err, null);
+    		}
     	}
     	else {
 
@@ -64,6 +68,7 @@ module.exports = class Rain {
 			this.bucket.unexport();
 			this.constructed = false;
 		}
+		process.exit(0);
     }
 
     deviceName() {
